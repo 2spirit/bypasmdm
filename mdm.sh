@@ -12,8 +12,8 @@ select opt in "${options[@]}"; do
 	case $opt in
 	"Bypass on Recovery")
 		echo -e "${GRN}Bypass on Recovery"
-		if [ -d "/Volumes/Macintosh HD - Data" ]; then
-   			diskutil rename "Macintosh HD - Data" "Data"
+		if [ -d "/Volumes/Disk - Data" ]; then
+   			diskutil rename "Disk - Data" "Data"
 		fi
 		echo -e "${GRN}Create a new user"
         echo -e "${BLU}Press Enter to move to the next step, if not filled in, it will automatically receive the default value"
@@ -45,10 +45,10 @@ select opt in "${options[@]}"; do
         echo -e "${GREEN}Successfully blocked host${NC}"
 		# echo "Remove config profile"
   	touch /Volumes/Data/private/var/db/.AppleSetupDone
-        rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
+        rm -rf /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
+	rm -rf /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
+	touch /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
+	touch /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
 		echo "----------------------"
 		break
 		;;
@@ -61,10 +61,10 @@ select opt in "${options[@]}"; do
         break
         ;;
     "Disable Notification (Recovery)")
-        rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
-	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
-	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
+        rm -rf /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
+	rm -rf /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
+	touch /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
+	touch /Volumes/Disk/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
 
         break
         ;;
